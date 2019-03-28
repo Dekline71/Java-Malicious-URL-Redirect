@@ -19,16 +19,20 @@ public class Redirect
 public Redirect()
 {
 
-    whitelist = new String[2];
+ 
+    whitelist = new String[5];
     whitelist[0] = "http://www.abcbank.com/";
     whitelist[1] = "http://www.abcbank.com/login"; 
+    whitelist[2] = "http://www.facebook.com"; 
+    whitelist[3] = "http://www.google.com"; 
+    whitelist[4] = "http://www.abc.com"; 
     
 }
     
     protected void doGet(Request request, Response response) throws IOException 
     { 
-    String query = request.getQueryString();
-            System.out.println("Request: " + query);
+        String query = request.getQueryString();
+        System.out.println("Request: " + query);
             
 
         if (checkWhitelist(query)) 
@@ -42,7 +46,7 @@ public Redirect()
         {
             System.out.println("No matching query found. Redirect Rejected.");
         }
-            System.out.println("Response: " + response.getURL());
+            System.out.println("Response: " + query);
 
     }
     

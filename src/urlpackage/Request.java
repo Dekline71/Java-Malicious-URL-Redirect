@@ -12,7 +12,7 @@ package urlpackage;
 public class Request 
 {
     // URL for GET Request
-    private String request = "http://abcbank.com/redirect?url=http://abcbank.com.attacker.example.net";
+    private String request = "http://abcbank.com/redirect?url=http://abcbank.com.attacker.target.net";
     
 public String getQueryString()
 {
@@ -23,5 +23,10 @@ public String getParameter(String url)
 {
     return url;
 }
-    
+
+public void setParameter(String url)
+{
+    this.request = url;
+}
+
 }
